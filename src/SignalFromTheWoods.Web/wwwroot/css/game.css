@@ -44,9 +44,19 @@ html, body {
 }
 
 .waiting, .desk {
-    max-width: 40rem;
+    max-width: 56rem;
     margin: 4vh auto 0;
     line-height: 1.6;
+}
+
+.waiting-image {
+    display: block;
+    width: 100%;
+    max-width: 48rem;
+    height: auto;
+    margin: 1.5rem auto 0;
+    border: 1px solid #3c7a4d;
+    box-shadow: 0 0 18px rgba(157, 255, 180, 0.25);
 }
 
 .waiting-title {
