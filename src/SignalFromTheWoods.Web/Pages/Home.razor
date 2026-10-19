@@ -1,0 +1,31 @@
+﻿@page "/"
+@using SignalFromTheWoods.Application.Services
+@using SignalFromTheWoods.Web.Resources
+@inject UnlockService Unlock
+@inject IStringLocalizer<Strings> L
+
+@if (Unlock.HasCalendarOpened)
+{
+    @if (Unlock.IsDemoMode)
+    {
+        <div class="demo-banner">@L["DemoBanner"]</div>
+    }
+    <DeskPlaceholder />
+}
+else
+{
+    <WaitingRoom />
+}
+
+@code {
+    [SupplyParameterFromQuery(Name = "demo")]
+    public string? Demo { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        if (Demo == "1")
+        {
+            Unlock.IsDemoMode = true;
+        }
+    }
+}

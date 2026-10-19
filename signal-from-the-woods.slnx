@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SignalFromTheWoods.Application/SignalFromTheWoods.Application.csproj" />
+    <Project Path="src/SignalFromTheWoods.Domain/SignalFromTheWoods.Domain.csproj" />
+    <Project Path="src/SignalFromTheWoods.Web/SignalFromTheWoods.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SignalFromTheWoods.Domain.Tests/SignalFromTheWoods.Domain.Tests.csproj" />
+  </Folder>
+</Solution>

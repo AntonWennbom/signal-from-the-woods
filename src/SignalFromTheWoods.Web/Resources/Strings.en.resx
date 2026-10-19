@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="AppTitle" xml:space="preserve"><value>Signal from the Woods</value></data>
+  <data name="WaitingTitle" xml:space="preserve"><value>[ SIGNAL MISSING ]</value></data>
+  <data name="WaitingLocation" xml:space="preserve"><value>The lake, northern Sweden. 23:47. It is snowing.</value></data>
+  <data name="WaitingBody1" xml:space="preserve"><value>Someone has left the radio on. It crackles. Someone, or something, is trying to reach you.</value></data>
+  <data name="WaitingBody2" xml:space="preserve"><value>You can't remember who you are. Perhaps that's for the best. For now.</value></data>
+  <data name="WaitingOpens" xml:space="preserve"><value>The first door opens on December 1st.</value></data>
+  <data name="WaitingUntil" xml:space="preserve"><value>Until then: put on your woolly socks, refill the coffee and do not leave the cabin.</value></data>
+  <data name="WaitingAside" xml:space="preserve"><value>(And if you hear something big outside the window: it's surely just the snow.)</value></data>
+  <data name="WaitingScan" xml:space="preserve"><value>[ Scanning frequency... 88.1 ... 91.4 ... 101.0 ... ]</value></data>
+  <data name="DeskPlaceholder" xml:space="preserve"><value>The radio desk is on its way. The doors open soon.</value></data>
+  <data name="DemoBanner" xml:space="preserve"><value>DEMO MODE: all doors are unlocked</value></data>
+  <data name="LanguageLabel" xml:space="preserve"><value>Language</value></data>
+</root>

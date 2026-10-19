@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="AppTitle" xml:space="preserve"><value>Signal från Skogen</value></data>
+  <data name="WaitingTitle" xml:space="preserve"><value>[ SIGNAL SAKNAS ]</value></data>
+  <data name="WaitingLocation" xml:space="preserve"><value>Insjön, norra Sverige. 23:47. Det snöar.</value></data>
+  <data name="WaitingBody1" xml:space="preserve"><value>Någon har lämnat radion på. Den sprakar. Någon, eller något, försöker nå dig.</value></data>
+  <data name="WaitingBody2" xml:space="preserve"><value>Du kan inte komma ihåg vem du är. Det är kanske bäst så. Än så länge.</value></data>
+  <data name="WaitingOpens" xml:space="preserve"><value>Första luckan öppnas 1 december.</value></data>
+  <data name="WaitingUntil" xml:space="preserve"><value>Tills dess: ta på dig raggsockorna, fyll på kaffet och lämna inte stugan.</value></data>
+  <data name="WaitingAside" xml:space="preserve"><value>(Och om du hör något stort utanför fönstret: det är säkert bara snön.)</value></data>
+  <data name="WaitingScan" xml:space="preserve"><value>[ Söker frekvens... 88.1 ... 91.4 ... 101.0 ... ]</value></data>
+  <data name="DeskPlaceholder" xml:space="preserve"><value>Radiobordet är på väg. Luckorna öppnas snart.</value></data>
+  <data name="DemoBanner" xml:space="preserve"><value>DEMOLÄGE: alla luckor är upplåsta</value></data>
+  <data name="LanguageLabel" xml:space="preserve"><value>Språk</value></data>
+</root>

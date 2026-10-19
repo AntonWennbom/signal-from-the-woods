@@ -1,0 +1,15 @@
+@using SignalFromTheWoods.Web.Resources
+@inject IStringLocalizer<Strings> L
+
+<PageTitle>@L["AppTitle"]</PageTitle>
+
+<main class="waiting">
+    <h1 class="waiting-title">@L["WaitingTitle"]</h1>
+    <p class="waiting-location"><em>@L["WaitingLocation"]</em></p>
+    <p>@L["WaitingBody1"]</p>
+    <p>@L["WaitingBody2"]</p>
+    <p class="waiting-opens"><strong>@L["WaitingOpens"]</strong></p>
+    <p>@L["WaitingUntil"]</p>
+    <p class="waiting-aside"><em>@L["WaitingAside"]</em></p>
+    <code class="waiting-scan">@L["WaitingScan"]</code>
+</main>

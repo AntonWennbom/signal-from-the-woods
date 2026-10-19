@@ -1,0 +1,29 @@
+@using SignalFromTheWoods.Web.Infrastructure
+@using SignalFromTheWoods.Web.Resources
+@inject CultureService Culture
+@inject NavigationManager Navigation
+@inject IStringLocalizer<Strings> L
+
+<div class="language-switcher" role="group" aria-label="@L["LanguageLabel"]">
+    @foreach (var language in CultureService.Supported)
+    {
+        <button type="button"
+                class="@(language == CultureService.Current ? "active" : null)"
+                @onclick="() => ChangeAsync(language)">
+            @language.ToUpperInvariant()
+        </button>
+    }
+</div>
+
+@code {
+    private async Task ChangeAsync(string selected)
+    {
+        if (selected == CultureService.Current)
+        {
+            return;
+        }
+
+        await Culture.SetCultureAsync(selected);
+        Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
+    }
+}
