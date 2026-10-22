@@ -1,0 +1,17 @@
+@using SignalFromTheWoods.Domain.Calendar
+
+<button type="button" class="hotspot" style="@Style" aria-label="@Label" title="@Label" @onclick="OnClick"></button>
+
+@code {
+    [Parameter, EditorRequired]
+    public Hotspot Item { get; set; } = default!;
+
+    [Parameter, EditorRequired]
+    public string Label { get; set; } = string.Empty;
+
+    [Parameter]
+    public EventCallback OnClick { get; set; }
+
+    private string Style => FormattableString.Invariant(
+        $"left:{Item.X}%;top:{Item.Y}%;width:{Item.Width}%;height:{Item.Height}%;");
+}

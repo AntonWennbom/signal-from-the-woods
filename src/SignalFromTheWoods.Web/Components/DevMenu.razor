@@ -1,0 +1,50 @@
+@implements IDisposable
+@using SignalFromTheWoods.Application.Services
+@using SignalFromTheWoods.Domain.Calendar
+@inject UnlockService Unlock
+@inject ProgressService Game
+@inject NavigationManager Navigation
+
+@if (Unlock.IsDemoMode)
+{
+    <details class="dev-menu">
+        <summary>DEV</summary>
+        <div class="dev-menu-body">
+            <label>
+                Go to day
+                <select @bind="_selectedDay">
+                    @for (var day = UnlockPolicy.FirstDay; day <= UnlockPolicy.LastDay; day++)
+                    {
+                        <option value="@day">@day</option>
+                    }
+                </select>
+            </label>
+            <button type="button" @onclick="JumpAsync">Go</button>
+            <button type="button" @onclick="ResetAsync">Reset progress</button>
+        </div>
+    </details>
+}
+
+@code {
+    private int _selectedDay = UnlockPolicy.FirstDay;
+
+    protected override void OnInitialized() => Unlock.DemoModeChanged += OnDemoModeChanged;
+
+    public void Dispose() => Unlock.DemoModeChanged -= OnDemoModeChanged;
+
+    private void OnDemoModeChanged() => _ = InvokeAsync(StateHasChanged);
+
+    private async Task JumpAsync()
+    {
+        await Game.EnsureLoadedAsync();
+        await Game.JumpToDayAsync(_selectedDay);
+        Navigation.NavigateTo($"day/{_selectedDay}?demo=1", forceLoad: true);
+    }
+
+    private async Task ResetAsync()
+    {
+        await Game.EnsureLoadedAsync();
+        await Game.ResetAsync();
+        Navigation.NavigateTo("?demo=1", forceLoad: true);
+    }
+}

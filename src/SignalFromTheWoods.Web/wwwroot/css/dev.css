@@ -1,0 +1,34 @@
+.dev-menu {
+    position: fixed;
+    left: 0.75rem;
+    bottom: 0.75rem;
+    z-index: 30;
+    background: #0a1020;
+    border: 1px dashed #ffd27a;
+    color: #ffd27a;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.5rem;
+}
+
+.dev-menu summary {
+    cursor: pointer;
+}
+
+.dev-menu-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+}
+
+.dev-menu select, .dev-menu button {
+    background: transparent;
+    color: inherit;
+    border: 1px solid #ffd27a;
+    font: inherit;
+    padding: 0.1rem 0.4rem;
+}
+
+.dev-menu select option {
+    background: #0a1020;
+}

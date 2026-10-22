@@ -1,19 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
-  <resheader name="version"><value>2.0</value></resheader>
-  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
-  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
-  <data name="AppTitle" xml:space="preserve"><value>Signal från Skogen</value></data>
-  <data name="WaitingTitle" xml:space="preserve"><value>[ SIGNAL SAKNAS ]</value></data>
-  <data name="WaitingLocation" xml:space="preserve"><value>Insjön, norra Sverige. 23:47. Det snöar.</value></data>
-  <data name="WaitingBody1" xml:space="preserve"><value>Någon har lämnat radion på. Den sprakar. Någon, eller något, försöker nå dig.</value></data>
-  <data name="WaitingBody2" xml:space="preserve"><value>Du kan inte komma ihåg vem du är. Det är kanske bäst så. Än så länge.</value></data>
-  <data name="WaitingOpens" xml:space="preserve"><value>Första luckan öppnas 1 december.</value></data>
-  <data name="WaitingUntil" xml:space="preserve"><value>Tills dess: ta på dig raggsockorna, fyll på kaffet och lämna inte stugan.</value></data>
-  <data name="WaitingAside" xml:space="preserve"><value>(Och om du hör något stort utanför fönstret: det är säkert bara snön.)</value></data>
-  <data name="WaitingScan" xml:space="preserve"><value>[ Söker frekvens... 88.1 ... 91.4 ... 101.0 ... ]</value></data>
-  <data name="DeskPlaceholder" xml:space="preserve"><value>Radiobordet är på väg. Luckorna öppnas snart.</value></data>
-  <data name="DemoBanner" xml:space="preserve"><value>DEMOLÄGE: alla luckor är upplåsta</value></data>
-  <data name="LanguageLabel" xml:space="preserve"><value>Språk</value></data>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Signal från Skogen</value>
+  </data>
+  <data name="WaitingTitle" xml:space="preserve">
+    <value>[ SIGNAL SAKNAS ]</value>
+  </data>
+  <data name="WaitingLocation" xml:space="preserve">
+    <value>Insjön, norra Sverige. 23:47. Det snöar.</value>
+  </data>
+  <data name="WaitingBody1" xml:space="preserve">
+    <value>Någon har lämnat radion på. Den sprakar. Någon, eller något, försöker nå dig.</value>
+  </data>
+  <data name="WaitingBody2" xml:space="preserve">
+    <value>Du kan inte komma ihåg vem du är. Det är kanske bäst så. Än så länge.</value>
+  </data>
+  <data name="WaitingOpens" xml:space="preserve">
+    <value>Första luckan öppnas 1 december.</value>
+  </data>
+  <data name="WaitingUntil" xml:space="preserve">
+    <value>Tills dess: ta på dig raggsockorna, fyll på kaffet och lämna inte stugan.</value>
+  </data>
+  <data name="WaitingAside" xml:space="preserve">
+    <value>(Och om du hör något stort utanför fönstret: det är säkert bara snön.)</value>
+  </data>
+  <data name="WaitingScan" xml:space="preserve">
+    <value>[ Söker frekvens... 88.1 ... 91.4 ... 101.0 ... ]</value>
+  </data>
+  <data name="DeskPlaceholder" xml:space="preserve">
+    <value>Radiobordet är på väg. Luckorna öppnas snart.</value>
+  </data>
+  <data name="DemoBanner" xml:space="preserve">
+    <value>DEMOLÄGE: alla luckor är upplåsta</value>
+  </data>
+  <data name="LanguageLabel" xml:space="preserve">
+    <value>Språk</value>
+  </data>
+  <data name="Day1_Title" xml:space="preserve">
+    <value>Dag 1 – Kallt kaffe</value>
+  </data>
+  <data name="Day1_Memory" xml:space="preserve">
+    <value>Du vaknar vid radion. Kaffet står på bordet och det hänger en jacka över stolen. Du undrar om det är du som lämnat sakerna här eller om det är någon annan som bor här? Något sprakar i bruset.</value>
+  </data>
+  <data name="Day1_Radio_Label" xml:space="preserve">
+    <value>Radion</value>
+  </data>
+  <data name="Day1_Coffee_Label" xml:space="preserve">
+    <value>Kaffekoppen</value>
+  </data>
+  <data name="Day1_Coffee_Text" xml:space="preserve">
+    <value>Kaffet är iskallt. Det här kaffet bryggdes nog inte idag direkt.</value>
+  </data>
+  <data name="Day1_Jacket_Label" xml:space="preserve">
+    <value>Jackan</value>
+  </data>
+  <data name="Day1_Jacket_Text" xml:space="preserve">
+    <value>Namnlappen är sönderriven. Den enda text du kan urskilja är  "Op. _6__". Resten saknas.</value>
+  </data>
+  <data name="Day1_Hint1" xml:space="preserve">
+    <value>De flesta frekvenser är bara brus. Lyssna efter något som skiljer sig.</value>
+  </data>
+  <data name="Day1_Hint2" xml:space="preserve">
+    <value>Signalen ligger långt upp i bandet, långt över 60 MHz.</value>
+  </data>
+  <data name="Day1_Hint3" xml:space="preserve">
+    <value>Ställ in 66,6 MHz.</value>
+  </data>
+  <data name="BackToStart" xml:space="preserve">
+    <value>Tillbaka till stugan</value>
+  </data>
+  <data name="MemoryLabel" xml:space="preserve">
+    <value>Minne</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Stäng</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Fortsätt</value>
+  </data>
+  <data name="DayNotBuilt" xml:space="preserve">
+    <value>Den här luckan är inte klar än.</value>
+  </data>
+  <data name="DayLockedByOrder" xml:space="preserve">
+    <value>Du måste klara de tidigare dagarna först.</value>
+  </data>
+  <data name="DayWaitingForDate" xml:space="preserve">
+    <value>Den här luckan öppnas den {0} december.</value>
+  </data>
+  <data name="DayCompleted" xml:space="preserve">
+    <value>Dag klar!</value>
+  </data>
+  <data name="NextDayPlayable" xml:space="preserve">
+    <value>Nästa lucka är öppen: dag {0}.</value>
+  </data>
+  <data name="NextDayWaiting" xml:space="preserve">
+    <value>Nästa lucka öppnas den {0} december.</value>
+  </data>
+  <data name="GoToDay" xml:space="preserve">
+    <value>Gå till dag {0}</value>
+  </data>
+  <data name="ContinueToDay" xml:space="preserve">
+    <value>Fortsätt till dag {0}</value>
+  </data>
+  <data name="HintButton" xml:space="preserve">
+    <value>Visa ledtråd ({0}/{1})</value>
+  </data>
+  <data name="HintsLabel" xml:space="preserve">
+    <value>Ledtrådar</value>
+  </data>
+  <data name="FrequencyTitle" xml:space="preserve">
+    <value>Ställ in frekvensen</value>
+  </data>
+  <data name="FrequencyConfirm" xml:space="preserve">
+    <value>Lås in frekvensen</value>
+  </data>
+  <data name="FrequencyNoise" xml:space="preserve">
+    <value>Bara brus. Fortsätt leta.</value>
+  </data>
+  <data name="FrequencyFound" xml:space="preserve">
+    <value>Under bruset hörs ett lågt, dovt "hrmmmm". Något svarar.</value>
+  </data>
+  <data name="SignalStrength" xml:space="preserve">
+    <value>Signalstyrka</value>
+  </data>
+  <data name="Day1_Completion" xml:space="preserve">
+    <value>Till sist föll rätt frekvens på plats. Bruset gav vika och något tog dess plats: ett ljud, kanske en röst, långt borta och mycket lågt. Du lyssnar länge men får inte grepp om vad det var. Vinden i antennen? Något annat? Det får du fortsätta utforska imorgon.</value>
+  </data>
 </root>

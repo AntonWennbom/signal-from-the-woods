@@ -1,0 +1,108 @@
+@page "/day/{Number:int}"
+@using SignalFromTheWoods.Application.Services
+@using SignalFromTheWoods.Domain.Calendar
+@inject ProgressService Game
+@inject UnlockService Unlock
+@inject IStringLocalizer<SignalFromTheWoods.Web.Resources.Strings> L
+
+<PageTitle>@L["AppTitle"]</PageTitle>
+
+<main class="day-page">
+    <nav class="day-nav"><a href="@HomeHref">&larr; @L["BackToStart"]</a></nav>
+
+    @if (_loading)
+    {
+        <p class="status-message">...</p>
+    }
+    else if (_day is null)
+    {
+        <p class="status-message">@L["DayNotBuilt"]</p>
+    }
+    else if (_status == DayStatus.LockedByOrder)
+    {
+        <p class="status-message">@L["DayLockedByOrder"]</p>
+    }
+    else if (_status == DayStatus.WaitingForDate)
+    {
+        <p class="status-message">@L["DayWaitingForDate", Number]</p>
+    }
+    else
+    {
+        <DayScene Day="_day" OnPuzzleRequested="OpenPuzzle" />
+
+        @if (_status == DayStatus.Completed)
+        {
+            <section class="day-complete">
+                @if (_day.CompletionKey is not null)
+                {
+                    <p class="day-outro">@L[_day.CompletionKey]</p>
+                }
+                <p><strong>@L["DayCompleted"]</strong></p>
+                @if (Number < UnlockPolicy.LastDay)
+                {
+                    @if (Game.GetStatus(Number + 1) == DayStatus.Playable)
+                    {
+                        <p>@L["NextDayPlayable", Number + 1]</p>
+                        <a class="button-link" href="@DayHref(Number + 1)">@L["GoToDay", Number + 1]</a>
+                    }
+                    else
+                    {
+                        <p>@L["NextDayWaiting", Number + 1]</p>
+                    }
+                }
+            </section>
+        }
+
+        @if (_showPuzzle)
+        {
+            <PuzzleHost Day="_day" OnCompleted="CompleteAsync" OnClose="ClosePuzzle" />
+        }
+    }
+</main>
+
+@code {
+    private DayDefinition? _day;
+    private DayStatus _status;
+    private bool _loading = true;
+    private bool _showPuzzle;
+
+    [Parameter]
+    public int Number { get; set; }
+
+    [SupplyParameterFromQuery(Name = "demo")]
+    public string? Demo { get; set; }
+
+    private string DemoSuffix => Unlock.IsDemoMode ? "?demo=1" : string.Empty;
+
+    private string HomeHref => "" + DemoSuffix;
+
+    private string DayHref(int number) => $"day/{number}{DemoSuffix}";
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Demo == "1")
+        {
+            Unlock.IsDemoMode = true;
+        }
+
+        _loading = true;
+        _showPuzzle = false;
+
+        await Game.EnsureLoadedAsync();
+
+        _day = DayCatalog.Get(Number);
+        _status = Game.GetStatus(Number);
+        _loading = false;
+    }
+
+    private void OpenPuzzle() => _showPuzzle = true;
+
+    private void ClosePuzzle() => _showPuzzle = false;
+
+    private async Task CompleteAsync()
+    {
+        await Game.CompleteDayAsync(Number);
+        _status = Game.GetStatus(Number);
+        _showPuzzle = false;
+    }
+}

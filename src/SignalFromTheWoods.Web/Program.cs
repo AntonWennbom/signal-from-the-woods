@@ -13,6 +13,8 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 builder.Services.AddSingleton<IClock, SystemClock>();
 builder.Services.AddScoped<UnlockService>();
+builder.Services.AddScoped<IProgressStore, LocalStorageProgressStore>();
+builder.Services.AddScoped<ProgressService>();
 builder.Services.AddScoped<CultureService>();
 builder.Services.AddLocalization();
 

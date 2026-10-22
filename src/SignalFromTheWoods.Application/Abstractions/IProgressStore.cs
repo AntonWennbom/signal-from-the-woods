@@ -1,8 +1,10 @@
 namespace SignalFromTheWoods.Application.Abstractions;
 
+using SignalFromTheWoods.Domain.Progress;
+
 public interface IProgressStore
 {
-    Task<IReadOnlySet<int>> GetCompletedDaysAsync();
+    Task<GameProgress> LoadAsync();
 
-    Task MarkDayCompletedAsync(int day);
+    Task SaveAsync(GameProgress progress);
 }

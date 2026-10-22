@@ -36,6 +36,30 @@ public class GameProgress
 
     public void SetHintsRevealed(int day, int count) => _hintsRevealed[day] = count;
 
+    /// <summary>
+    /// Sets progress so that <paramref name="day"/> is the next day to play: all earlier days are
+    /// completed, and the given day and later days are not (including their hints).
+    /// </summary>
+    public void JumpTo(int day)
+    {
+        _completedDays.Clear();
+        for (var earlier = 1; earlier < day; earlier++)
+        {
+            _completedDays.Add(earlier);
+        }
+
+        foreach (var key in _hintsRevealed.Keys.Where(key => key >= day).ToList())
+        {
+            _hintsRevealed.Remove(key);
+        }
+    }
+
+    public void Reset()
+    {
+        _completedDays.Clear();
+        _hintsRevealed.Clear();
+    }
+
     public static GameProgress From(IEnumerable<int> completedDays, IReadOnlyDictionary<int, int>? hints = null)
     {
         var progress = new GameProgress();
