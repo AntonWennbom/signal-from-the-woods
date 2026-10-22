@@ -60,8 +60,9 @@ html, body {
 }
 
 .waiting-title {
-    font-size: 2rem;
+    font-size: clamp(1rem, 5.5vw, 2rem);
     letter-spacing: 0.15em;
+    white-space: nowrap;
     animation: flicker 3s infinite;
 }
 

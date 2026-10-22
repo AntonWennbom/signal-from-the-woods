@@ -1,19 +1,244 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
-  <resheader name="version"><value>2.0</value></resheader>
-  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
-  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
-  <data name="AppTitle" xml:space="preserve"><value>Signal from the Woods</value></data>
-  <data name="WaitingTitle" xml:space="preserve"><value>[ SIGNAL MISSING ]</value></data>
-  <data name="WaitingLocation" xml:space="preserve"><value>The lake, northern Sweden. 23:47. It is snowing.</value></data>
-  <data name="WaitingBody1" xml:space="preserve"><value>Someone has left the radio on. It crackles. Someone, or something, is trying to reach you.</value></data>
-  <data name="WaitingBody2" xml:space="preserve"><value>You can't remember who you are. Perhaps that's for the best. For now.</value></data>
-  <data name="WaitingOpens" xml:space="preserve"><value>The first door opens on December 1st.</value></data>
-  <data name="WaitingUntil" xml:space="preserve"><value>Until then: put on your woolly socks, refill the coffee and do not leave the cabin.</value></data>
-  <data name="WaitingAside" xml:space="preserve"><value>(And if you hear something big outside the window: it's surely just the snow.)</value></data>
-  <data name="WaitingScan" xml:space="preserve"><value>[ Scanning frequency... 88.1 ... 91.4 ... 101.0 ... ]</value></data>
-  <data name="DeskPlaceholder" xml:space="preserve"><value>The radio desk is on its way. The doors open soon.</value></data>
-  <data name="DemoBanner" xml:space="preserve"><value>DEMO MODE: all doors are unlocked</value></data>
-  <data name="LanguageLabel" xml:space="preserve"><value>Language</value></data>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Signal from the Woods</value>
+  </data>
+  <data name="WaitingTitle" xml:space="preserve">
+    <value>[ SIGNAL MISSING ]</value>
+  </data>
+  <data name="WaitingLocation" xml:space="preserve">
+    <value>The lake, northern Sweden. 23:47. It is snowing.</value>
+  </data>
+  <data name="WaitingBody1" xml:space="preserve">
+    <value>Someone has left the radio on. It crackles. Someone, or something, is trying to reach you.</value>
+  </data>
+  <data name="WaitingBody2" xml:space="preserve">
+    <value>You can't remember who you are. Perhaps that's for the best. For now.</value>
+  </data>
+  <data name="WaitingOpens" xml:space="preserve">
+    <value>The first door opens on December 1st.</value>
+  </data>
+  <data name="WaitingUntil" xml:space="preserve">
+    <value>Until then: put on your woolly socks, refill the coffee and do not leave the cabin.</value>
+  </data>
+  <data name="WaitingAside" xml:space="preserve">
+    <value>(And if you hear something big outside the window: it's surely just the snow.)</value>
+  </data>
+  <data name="WaitingScan" xml:space="preserve">
+    <value>[ Scanning frequency... 88.1 ... 91.4 ... 101.0 ... ]</value>
+  </data>
+  <data name="DeskPlaceholder" xml:space="preserve">
+    <value>The radio desk is on its way. The doors open soon.</value>
+  </data>
+  <data name="DemoBanner" xml:space="preserve">
+    <value>DEMO MODE: all doors are unlocked</value>
+  </data>
+  <data name="LanguageLabel" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Day1_Title" xml:space="preserve">
+    <value>Day 1 – Cold Coffee</value>
+  </data>
+  <data name="Day1_Memory" xml:space="preserve">
+    <value>You wake up by the radio. The coffee is on the table and a jacket hangs over the chair. You wonder whether you are the one who left these things here, or whether someone else lives here. Something crackles in the static.</value>
+  </data>
+  <data name="Day1_Radio_Label" xml:space="preserve">
+    <value>The radio</value>
+  </data>
+  <data name="Day1_Coffee_Label" xml:space="preserve">
+    <value>The coffee cup</value>
+  </data>
+  <data name="Day1_Coffee_Text" xml:space="preserve">
+    <value>The coffee is ice cold. It was definitely not brewed today.</value>
+  </data>
+  <data name="Day1_Jacket_Label" xml:space="preserve">
+    <value>The jacket</value>
+  </data>
+  <data name="Day1_Jacket_Text" xml:space="preserve">
+    <value>The name tag is torn. The only text you can make out is "Op. 6_". The rest is missing.</value>
+  </data>
+  <data name="Day1_Hint1" xml:space="preserve">
+    <value>Most frequencies are just noise. Listen for something different.</value>
+  </data>
+  <data name="Day1_Hint2" xml:space="preserve">
+    <value>The signal is high up in the band, well above 60 MHz.</value>
+  </data>
+  <data name="Day1_Hint3" xml:space="preserve">
+    <value>Tune to 66.6 MHz.</value>
+  </data>
+  <data name="BackToStart" xml:space="preserve">
+    <value>Back to the cabin</value>
+  </data>
+  <data name="MemoryLabel" xml:space="preserve">
+    <value>Memory</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="DayNotBuilt" xml:space="preserve">
+    <value>This door is not ready yet.</value>
+  </data>
+  <data name="DayLockedByOrder" xml:space="preserve">
+    <value>You must complete the earlier days first.</value>
+  </data>
+  <data name="DayWaitingForDate" xml:space="preserve">
+    <value>This door opens on December {0}.</value>
+  </data>
+  <data name="DayCompleted" xml:space="preserve">
+    <value>Day complete!</value>
+  </data>
+  <data name="NextDayPlayable" xml:space="preserve">
+    <value>The next door is open: day {0}.</value>
+  </data>
+  <data name="NextDayWaiting" xml:space="preserve">
+    <value>The next door opens on December {0}.</value>
+  </data>
+  <data name="GoToDay" xml:space="preserve">
+    <value>Go to day {0}</value>
+  </data>
+  <data name="ContinueToDay" xml:space="preserve">
+    <value>Continue to day {0}</value>
+  </data>
+  <data name="HintButton" xml:space="preserve">
+    <value>Show hint ({0}/{1})</value>
+  </data>
+  <data name="HintsLabel" xml:space="preserve">
+    <value>Hints</value>
+  </data>
+  <data name="FrequencyTitle" xml:space="preserve">
+    <value>Tune the frequency</value>
+  </data>
+  <data name="FrequencyConfirm" xml:space="preserve">
+    <value>Lock frequency</value>
+  </data>
+  <data name="FrequencyNoise" xml:space="preserve">
+    <value>Just noise. Keep looking.</value>
+  </data>
+  <data name="FrequencyFound" xml:space="preserve">
+    <value>Beneath the static you hear a low, muffled "hrmmmm". Something answers.</value>
+  </data>
+  <data name="SignalStrength" xml:space="preserve">
+    <value>Signal strength</value>
+  </data>
+  <data name="Day1_Completion" xml:space="preserve"><value>At last the right frequency fell into place. The static gave way and something took its place: a sound, perhaps a voice, far away and very low. You listen for a long time but cannot make out what it was. The wind in the antenna? Something else? You will have to keep investigating tomorrow.</value></data>
 </root>

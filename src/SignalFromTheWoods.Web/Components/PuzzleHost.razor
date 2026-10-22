@@ -1,0 +1,68 @@
+@using SignalFromTheWoods.Domain.Calendar
+@using SignalFromTheWoods.Web.Components.Puzzles
+@using SignalFromTheWoods.Web.Resources
+@inject SignalFromTheWoods.Application.Services.ProgressService Game
+@inject IStringLocalizer<Strings> L
+
+<div class="overlay" role="dialog" aria-modal="true">
+    <div class="puzzle-panel">
+        <button type="button" class="close" @onclick="OnClose" aria-label="@L["Close"]">&times;</button>
+
+        @if (PuzzleRegistry.TryGetType(Day.PuzzleType, out var puzzleType))
+        {
+            <DynamicComponent Type="puzzleType" Parameters="_parameters" />
+        }
+
+        @if (Day.HintKeys.Count > 0)
+        {
+            var revealed = Game.Progress.GetHintsRevealed(Day.Number);
+
+            <div class="hints">
+                @if (revealed > 0)
+                {
+                    <h3>@L["HintsLabel"]</h3>
+                    <ol>
+                        @for (var i = 0; i < Math.Min(revealed, Day.HintKeys.Count); i++)
+                        {
+                            <li>@L[Day.HintKeys[i]]</li>
+                        }
+                    </ol>
+                }
+
+                @if (revealed < Day.HintKeys.Count)
+                {
+                    <button type="button" @onclick="RevealHintAsync">@L["HintButton", revealed, Day.HintKeys.Count]</button>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private Dictionary<string, object> _parameters = [];
+
+    [Parameter, EditorRequired]
+    public DayDefinition Day { get; set; } = default!;
+
+    [Parameter]
+    public EventCallback OnCompleted { get; set; }
+
+    [Parameter]
+    public EventCallback OnClose { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        _parameters = new Dictionary<string, object>
+        {
+            [nameof(PuzzleComponentBase.OnCompleted)] = OnCompleted
+        };
+
+        if (!string.IsNullOrEmpty(Day.PuzzleImage))
+        {
+            _parameters[nameof(PuzzleComponentBase.BackgroundImage)] = Day.PuzzleImage;
+        }
+    }
+
+    private async Task RevealHintAsync() =>
+        await Game.RevealNextHintAsync(Day.Number, Day.HintKeys.Count);
+}

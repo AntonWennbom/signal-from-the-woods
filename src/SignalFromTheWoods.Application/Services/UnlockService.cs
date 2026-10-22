@@ -5,7 +5,24 @@ namespace SignalFromTheWoods.Application.Services;
 
 public class UnlockService(IClock clock)
 {
-    public bool IsDemoMode { get; set; }
+    private bool _isDemoMode;
+
+    public event Action? DemoModeChanged;
+
+    public bool IsDemoMode
+    {
+        get => _isDemoMode;
+        set
+        {
+            if (_isDemoMode == value)
+            {
+                return;
+            }
+
+            _isDemoMode = value;
+            DemoModeChanged?.Invoke();
+        }
+    }
 
     public bool HasCalendarOpened => MaxUnlockedDay >= UnlockPolicy.FirstDay;
 

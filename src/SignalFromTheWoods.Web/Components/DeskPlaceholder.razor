@@ -1,9 +1,29 @@
+@using SignalFromTheWoods.Application.Services
 @using SignalFromTheWoods.Web.Resources
 @inject IStringLocalizer<Strings> L
+@inject ProgressService Game
+@inject UnlockService Unlock
 
 <PageTitle>@L["AppTitle"]</PageTitle>
 
 <main class="desk">
     <h1>@L["AppTitle"]</h1>
     <p>@L["DeskPlaceholder"]</p>
+
+    @if (_loaded)
+    {
+        var next = Math.Min(Game.Progress.NextDay, 24);
+        var href = $"day/{next}{(Unlock.IsDemoMode ? "?demo=1" : string.Empty)}";
+        <a class="button-link" href="@href">@L["ContinueToDay", next]</a>
+    }
 </main>
+
+@code {
+    private bool _loaded;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Game.EnsureLoadedAsync();
+        _loaded = true;
+    }
+}

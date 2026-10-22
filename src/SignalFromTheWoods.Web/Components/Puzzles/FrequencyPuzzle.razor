@@ -1,0 +1,88 @@
+@inherits PuzzleComponentBase
+@using System.Globalization
+@inject IStringLocalizer<SignalFromTheWoods.Web.Resources.Strings> L
+
+<div class="puzzle frequency" style="@BackgroundStyle">
+    <div class="puzzle-content">
+        <h2>@L["FrequencyTitle"]</h2>
+
+        <div class="dial-readout">@FrequencyText MHz</div>
+
+        <div class="dial-controls">
+            <button type="button" @onclick="() => Nudge(-1m)" aria-label="-1 MHz">-1</button>
+            <button type="button" @onclick="() => Nudge(-0.1m)" aria-label="-0.1 MHz">-0.1</button>
+            <input type="range" min="@MinText" max="@MaxText" step="0.1" value="@FrequencyText"
+                   @oninput="OnSliderInput" aria-label="@L["FrequencyTitle"]" />
+            <button type="button" @onclick="() => Nudge(0.1m)" aria-label="+0.1 MHz">+0.1</button>
+            <button type="button" @onclick="() => Nudge(1m)" aria-label="+1 MHz">+1</button>
+        </div>
+
+        <div class="meter" role="meter" aria-label="@L["SignalStrength"]" aria-valuemin="0" aria-valuemax="100" aria-valuenow="@Strength">
+            <div class="meter-fill" style="width:@(Strength.ToString(CultureInfo.InvariantCulture))%"></div>
+        </div>
+        <div class="meter-label">@L["SignalStrength"]</div>
+
+        <p class="puzzle-message @(_found ? "success" : null)" aria-live="polite">
+            @if (_found)
+            {
+                @L["FrequencyFound"]
+            }
+            else if (_noise)
+            {
+                @L["FrequencyNoise"]
+            }
+        </p>
+
+        @if (_found)
+        {
+            <button type="button" class="primary" @onclick="OnCompleted">@L["Continue"]</button>
+        }
+        else
+        {
+            <button type="button" class="primary" @onclick="Confirm">@L["FrequencyConfirm"]</button>
+        }
+    </div>
+</div>
+
+@code {
+    private const decimal Min = 60m;
+    private const decimal Max = 110m;
+    private const decimal Target = 66.6m;
+
+    private decimal _frequency = 88.1m;
+    private bool _found;
+    private bool _noise;
+
+    private string MinText => Min.ToString("0.0", CultureInfo.InvariantCulture);
+
+    private string MaxText => Max.ToString("0.0", CultureInfo.InvariantCulture);
+
+    private string FrequencyText => _frequency.ToString("0.0", CultureInfo.InvariantCulture);
+
+    private int Strength => (int)Math.Clamp(100m - Math.Abs(_frequency - Target) * 10m, 0m, 100m);
+
+    private string BackgroundStyle =>
+        string.IsNullOrEmpty(BackgroundImage) ? string.Empty : $"background-image:url('{BackgroundImage}')";
+
+    private void OnSliderInput(ChangeEventArgs args)
+    {
+        if (decimal.TryParse(args.Value?.ToString(), NumberStyles.Float, CultureInfo.InvariantCulture, out var value))
+        {
+            Set(value);
+        }
+    }
+
+    private void Nudge(decimal delta) => Set(_frequency + delta);
+
+    private void Set(decimal value)
+    {
+        _frequency = Math.Round(Math.Clamp(value, Min, Max), 1);
+        _noise = false;
+    }
+
+    private void Confirm()
+    {
+        _found = _frequency == Target;
+        _noise = !_found;
+    }
+}

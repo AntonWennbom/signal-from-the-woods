@@ -10,4 +10,6 @@ public sealed record DayDefinition(
     string SceneImage,
     string PuzzleType,
     IReadOnlyList<Hotspot> Hotspots,
-    IReadOnlyList<string> HintKeys);
+    IReadOnlyList<string> HintKeys,
+    string? PuzzleImage = null,
+    string? CompletionKey = null);

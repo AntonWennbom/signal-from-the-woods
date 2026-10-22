@@ -1,0 +1,177 @@
+.day-page {
+    max-width: 64rem;
+    margin: 2vh auto 0;
+    line-height: 1.6;
+}
+
+.day-nav a, .button-link {
+    color: #9dffb4;
+}
+
+.button-link {
+    display: inline-block;
+    border: 1px solid #3c7a4d;
+    padding: 0.3rem 0.9rem;
+    text-decoration: none;
+}
+
+.day-scene h1 {
+    margin: 0.5rem 0;
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    border: 1px solid #3c7a4d;
+    box-shadow: 0 0 18px rgba(157, 255, 180, 0.25);
+}
+
+.scene-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hotspot {
+    position: absolute;
+    padding: 0;
+    background: rgba(157, 255, 180, 0.05);
+    border: 1px dashed rgba(157, 255, 180, 0.35);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.hotspot:hover, .hotspot:focus-visible {
+    background: rgba(157, 255, 180, 0.2);
+    border-color: #9dffb4;
+    outline: none;
+}
+
+.memory {
+    margin-top: 1rem;
+}
+
+.status-message {
+    text-align: center;
+    margin-top: 4rem;
+    color: #ffd27a;
+}
+
+.day-complete {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #3c7a4d;
+    color: #ffd27a;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(5, 7, 15, 0.8);
+}
+
+.info-panel, .puzzle-panel {
+    position: relative;
+    max-width: 44rem;
+    width: 100%;
+    max-height: 92vh;
+    overflow-y: auto;
+    background: #0a1020;
+    border: 1px solid #9dffb4;
+    padding: 1.25rem;
+    box-sizing: border-box;
+}
+
+.puzzle-panel .close {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.6rem;
+    z-index: 2;
+}
+
+.overlay button, .day-page button {
+    background: transparent;
+    color: inherit;
+    border: 1px solid #3c7a4d;
+    font: inherit;
+    padding: 0.25rem 0.8rem;
+    cursor: pointer;
+}
+
+.overlay button:hover, .day-page button:hover {
+    border-color: #9dffb4;
+}
+
+.overlay button.primary {
+    background: #9dffb4;
+    color: #05070f;
+}
+
+.puzzle {
+    background-size: cover;
+    background-position: center;
+}
+
+.puzzle-content {
+    padding: 1rem;
+    background: rgba(5, 7, 15, 0.7);
+}
+
+.dial-readout {
+    font-size: 2.5rem;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.dial-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.dial-controls input[type="range"] {
+    flex: 1;
+    accent-color: #9dffb4;
+}
+
+.meter {
+    height: 0.9rem;
+    border: 1px solid #3c7a4d;
+}
+
+.meter-fill {
+    height: 100%;
+    background: #9dffb4;
+    transition: width 0.1s;
+}
+
+.meter-label {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.puzzle-message {
+    min-height: 4.8em;
+    margin: 0.75rem 0;
+}
+
+.puzzle-message.success {
+    color: #ffd27a;
+}
+
+.hints {
+    margin-top: 1rem;
+    border-top: 1px dashed #3c7a4d;
+    padding-top: 0.5rem;
+}
+
+.hints h3 {
+    margin: 0.25rem 0;
+}

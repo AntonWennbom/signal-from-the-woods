@@ -1,0 +1,46 @@
+@using SignalFromTheWoods.Domain.Calendar
+@inject IStringLocalizer<SignalFromTheWoods.Web.Resources.Strings> L
+
+<section class="day-scene">
+    <h1>@L[Day.TitleKey]</h1>
+
+    <div class="scene">
+        <img class="scene-image" src="@Day.SceneImage" alt="@L[Day.TitleKey]" />
+
+        @foreach (var spot in Day.Hotspots)
+        {
+            var current = spot;
+            <HotspotButton Item="current" Label="@L[current.LabelKey]" OnClick="() => SelectAsync(current)" />
+        }
+    </div>
+
+    <p class="memory"><strong>@L["MemoryLabel"]:</strong> @L[Day.MemoryKey]</p>
+</section>
+
+@if (_info is not null)
+{
+    <InfoDialog Title="@L[_info.LabelKey]" Text="@L[_info.TextKey ?? _info.LabelKey]" OnClose="CloseInfo" />
+}
+
+@code {
+    private Hotspot? _info;
+
+    [Parameter, EditorRequired]
+    public DayDefinition Day { get; set; } = default!;
+
+    [Parameter]
+    public EventCallback OnPuzzleRequested { get; set; }
+
+    private async Task SelectAsync(Hotspot spot)
+    {
+        if (spot.Kind == HotspotKind.StartPuzzle)
+        {
+            await OnPuzzleRequested.InvokeAsync();
+            return;
+        }
+
+        _info = spot;
+    }
+
+    private void CloseInfo() => _info = null;
+}
